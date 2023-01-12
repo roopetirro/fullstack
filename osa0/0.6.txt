@@ -1,0 +1,8 @@
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+palvelin-->selain: uusi muistiinpano
+
+note over palvelin: Palvelin ei pyydä uudelleenohjausta.
+end note
+
+note over selain: Selain pysyy samalla sivulla ja muita HTTP pyyntöjä ei suoriteta. Lisätty muistiinpano näkyy sivulla.
+end note
