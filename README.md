@@ -1,1 +1,1 @@
-"Fullstack Open 2022 repositorio" 
+Fullstack Open 2022 repositorio tehtäviä varten
