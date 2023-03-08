@@ -25,7 +25,7 @@ const addPerson = (event) => {
     name: newName,
     number: newNumber
   }
-  const foundPerson = persons.find(person => person.name == newPerson.name)
+  const foundPerson = persons.find(person => person.name === newPerson.name)
   if (foundPerson !== undefined) {
     alert(foundPerson.name + ' already in phonebook')
     return
@@ -43,7 +43,7 @@ const addPerson = (event) => {
       }, 3000)
     })
     .catch(error => {
-      setMessage(error)
+      setMessage(error.response.data.error)
     })
 }
 
