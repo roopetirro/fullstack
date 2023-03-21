@@ -1,9 +1,11 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtvb2RpIiwiaWQiOiI2NDE5YmYwZDAzNjYyMDEyMGY1MjUxYmUiLCJpYXQiOjE2Nzk0MDkwOTEsImV4cCI6MTY3OTQxMjY5MX0.wyCBLMxcOj5Y-XRs3AujU-9KiFoI7DCfBj2kYOYmUjc
 
 {
-  "title": "kolmasblogi",
+  "title": "viidesblogi",
   "author": "Roope ",
   "url": "www.example.com",
-  "likes": "7"
+  "likes": 7,
+  "userId": "6419bf0d036620120f5251be" 
 }

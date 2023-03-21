@@ -10,7 +10,6 @@ beforeEach(async () => {
   await Blog.insertMany(helper.initialBlogs)
 })
 
-
 describe('check that blogs are returned and that they are in correct form', () => {
   test('blogs are JSON', async () => {
     await api
@@ -42,12 +41,11 @@ describe('check that blogs are returned and that they are in correct form', () =
 describe('adding new blogs', () => {
   test('a valid blog can be added ', async () => {
     const newBlog = {
-      _id: '5a422ba71b54a676234d17fb',
       title: 'TDD harms architecture',
       author: 'Robert C. Martin',
       url: 'http://blog.cleancoder.com/uncle-bob/2017/03/03/TDD-Harms-Architecture.html',
       likes: 0,
-      __v: 0
+      userId: '64161366ac174b3cadf5ee0f'
     }
 
     await api
@@ -67,7 +65,7 @@ describe('adding new blogs', () => {
 
   test('blog without title or url cannot be added', async () => {
     const newBlog = {
-      likes: 1
+      likes: 1,
     }
 
     await api
