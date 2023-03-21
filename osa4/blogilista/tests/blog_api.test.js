@@ -39,17 +39,27 @@ describe('check that blogs are returned and that they are in correct form', () =
 
 
 describe('adding new blogs', () => {
+  let token = null
+
+  beforeAll(async () => {
+    const response = await api
+      .post('/api/login')
+      .send({ username: 'koodi3', password: 'password' })
+    token = response.body.token
+  })
   test('a valid blog can be added ', async () => {
+
     const newBlog = {
       title: 'TDD harms architecture',
       author: 'Robert C. Martin',
       url: 'http://blog.cleancoder.com/uncle-bob/2017/03/03/TDD-Harms-Architecture.html',
       likes: 0,
-      userId: '64161366ac174b3cadf5ee0f'
+      userId: '6419c5bdd21420ce18651c7a'
     }
 
     await api
       .post('/api/blogs')
+      .set('Authorization', `Bearer ${token}`)
       .send(newBlog)
       .expect(201)
       .expect('Content-Type', /application\/json/)
